@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Loft</string>
+    <string name="settings">Configurações</string>
+    <string name="menu">Cardápio</string>
+    <string name="foods">Comidas</string>
+    <string name="beverage">Bebidas</string>
+    <string name="drinks">Drinks</string>
+</resources>
