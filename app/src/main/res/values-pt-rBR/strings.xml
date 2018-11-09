@@ -6,4 +6,5 @@
     <string name="foods">Comidas</string>
     <string name="beverage">Bebidas</string>
     <string name="drinks">Drinks</string>
+    <string name="units">Unidades:</string>
 </resources>

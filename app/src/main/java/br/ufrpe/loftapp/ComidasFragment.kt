@@ -32,6 +32,8 @@ class ComidasFragment: Fragment() {
         return v
     }
 
+
+
     private fun loadFoodItem(){
         itemList.add(Item("Pão de queijo", 6, 5.0))
         itemList.add(Item("Coxinha", 10, 12.0))

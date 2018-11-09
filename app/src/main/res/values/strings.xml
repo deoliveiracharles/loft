@@ -11,5 +11,6 @@
     <string name="foods">Foods</string>
     <string name="beverage">Beverage</string>
     <string name="drinks">Drinks</string>
+    <string name="units">Units:</string>
 
 </resources>
