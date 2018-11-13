@@ -1,5 +1,7 @@
 package br.ufrpe.loftapp
 
-class Item(var name: String, var units: Int, var price: Double) {
+import java.io.Serializable
+
+class Item(var name: String, var units: Int, var price: Double): Serializable {
 
 }

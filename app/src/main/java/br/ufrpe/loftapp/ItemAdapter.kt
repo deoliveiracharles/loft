@@ -1,6 +1,8 @@
 package br.ufrpe.loftapp
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +21,7 @@ class ItemAdapter(private val items: ArrayList<Item>, private val context: Conte
     }
 
     override fun onBindViewHolder(p0: ViewHolder, position: Int) {
+
         p0.bind(items[position], context)
         /*
         p0?.tvName?.text = items[position].name
@@ -40,6 +43,10 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
         tvUnits.text = item.units.toString()
         itemView.setOnClickListener {
             Toast.makeText(context, "Item Clicado: ${item.name}", Toast.LENGTH_LONG).show()
+            var intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("item", item)
+            var contexto = context as Activity
+            contexto.startActivityForResult(intent, Constants.RequestCodeComidas)
         }
     }
 }
