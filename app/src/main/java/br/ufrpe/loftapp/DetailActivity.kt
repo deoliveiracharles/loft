@@ -1,6 +1,7 @@
 package br.ufrpe.loftapp
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.Gravity
@@ -33,5 +34,16 @@ class DetailActivity : Activity() {
         tvUnitsDetail.text = item.units.toString()
         tvIngredients.text = item.ingredients
 
+        tvCancelbtn.setOnClickListener {
+            val intent = Intent()
+            setResult(Activity.RESULT_CANCELED, intent)
+            finish()
+        }
+        btnCard.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("item", item)
+            setResult( Activity.RESULT_OK, intent)
+            finish()
+        }
     }
 }
