@@ -7,4 +7,8 @@
     <string name="beverage">Bebidas</string>
     <string name="drinks">Drinks</string>
     <string name="units">Unidades:</string>
+    <string name="money">R$</string>
+    <string name="ingredient">Ingredientes</string>
+    <string name="addCard">Adicionar a comanda</string>
+    <string name="cancelbtn">Cancelar</string>
 </resources>

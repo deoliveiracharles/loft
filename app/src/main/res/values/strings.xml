@@ -12,5 +12,9 @@
     <string name="beverage">Beverage</string>
     <string name="drinks">Drinks</string>
     <string name="units">Units:</string>
+    <string name="money">R$</string>
+    <string name="ingredient">Ingredients</string>
+    <string name="addCard">Add to the card</string>
+    <string name="cancelbtn">Cancel</string>
 
 </resources>

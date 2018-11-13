@@ -8,4 +8,6 @@
     <color name="loftTabUnchosen">#9b9b9b</color>
     <color name="loftTabChosen">#ffff00</color>
     <color name="loftDarkBlue">#083c8e</color>
+    <color name="textColor">#000000</color>
+    <color name="pressBtn">#ffff00</color>
 </resources>

@@ -35,30 +35,30 @@ class ComidasFragment: Fragment() {
 
 
     private fun loadFoodItem(){
-        itemList.add(Item("Pão de queijo", 6, 5.0))
-        itemList.add(Item("Coxinha", 10, 12.0))
-        itemList.add(Item("Brigadeiro", 10, 8.0))
-        itemList.add(Item("Pastel de forno", 6, 10.0))
+        itemList.add(Item("Pão de queijo", 6, 5.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Coxinha", 10, 12.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Brigadeiro", 10, 8.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Pastel de forno", 6, 10.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
 
-        itemList.add(Item("Pão de queijo", 6, 5.0))
-        itemList.add(Item("Coxinha", 10, 12.0))
-        itemList.add(Item("Brigadeiro", 10, 8.0))
-        itemList.add(Item("Pastel de ", 6, 10.0))
+        itemList.add(Item("Pão de queijo", 6, 5.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Coxinha", 10, 12.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Brigadeiro", 10, 8.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Pastel de ", 6, 10.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
 
-        itemList.add(Item("Pão de queijo", 6, 5.0))
-        itemList.add(Item("Coxinha", 10, 12.0))
-        itemList.add(Item("Brigadeiro", 10, 8.0))
-        itemList.add(Item("Pastel de forno ", 6, 10.0))
+        itemList.add(Item("Pão de queijo", 6, 5.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Coxinha", 10, 12.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Brigadeiro", 10, 8.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Pastel de forno ", 6, 10.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
 
-        itemList.add(Item("Pão de queijo", 6, 5.0))
-        itemList.add(Item("Coxinha", 10, 12.0))
-        itemList.add(Item("Brigadeiro", 10, 8.0))
-        itemList.add(Item("Pastel de forno", 6, 10.0))
+        itemList.add(Item("Pão de queijo", 6, 5.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Coxinha", 10, 12.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Brigadeiro", 10, 8.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Pastel de forno", 6, 10.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
 
-        itemList.add(Item("Pão de queijo", 6, 5.0))
-        itemList.add(Item("Coxinha", 10, 12.0))
-        itemList.add(Item("Brigadeiro", 10, 8.0))
-        itemList.add(Item("Pastel de forno", 6, 10.0))
+        itemList.add(Item("Pão de queijo", 6, 5.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Coxinha", 10, 12.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Brigadeiro", 10, 8.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
+        itemList.add(Item("Pastel de forno", 6, 10.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
 
     }
 }

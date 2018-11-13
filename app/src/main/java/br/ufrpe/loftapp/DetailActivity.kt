@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.Gravity
-import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : Activity() {
@@ -16,20 +15,23 @@ class DetailActivity : Activity() {
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
 
-        var width = displayMetrics.widthPixels
-        var height = displayMetrics.heightPixels
+        val width = displayMetrics.widthPixels
+        val height = displayMetrics.heightPixels
 
-        window.setLayout((width*0.8).toInt(),(height*0.6).toInt())
+        window.setLayout((width*0.8).toInt(),(height*0.8).toInt())
 
-        var params = window.attributes
+        val params = window.attributes
         params.gravity = Gravity.CENTER
         params.x = 0
         params.y = 20
         window.attributes = params
 
-        var item = intent.getSerializableExtra("item") as Item
+        val item = intent.getSerializableExtra("item") as Item
 
-        tvName.text = item.name.toString()
-        tvPrice.text = item.price.toString()
+        tvNameDetail.text = item.name
+        tvPriceDetail.text = item.price.toString()
+        tvUnitsDetail.text = item.units.toString()
+        tvIngredients.text = item.ingredients
+
     }
 }
