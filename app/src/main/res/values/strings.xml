@@ -16,5 +16,11 @@
     <string name="ingredient">Ingredients</string>
     <string name="addCard">Add to the card</string>
     <string name="cancelbtn">Cancel</string>
+    <string name="addedToCard">Added to the card</string>
+    <string name="card">Card</string>
+    <string name="itens">itens</string>
+    <string name="value">Value:</string>
+    <string name="taxService">Service Tax</string>
+    <string name="total">Total</string>
 
 </resources>

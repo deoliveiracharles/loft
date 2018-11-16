@@ -10,4 +10,5 @@
     <color name="loftDarkBlue">#083c8e</color>
     <color name="textColor">#000000</color>
     <color name="pressBtn">#ffff00</color>
+    <color name="loftSoftDark">#303030</color>
 </resources>

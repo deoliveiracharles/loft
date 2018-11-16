@@ -1,4 +1,4 @@
-package br.ufrpe.loftapp
+package br.ufrpe.loftapp.card
 
 import android.app.Activity
 import android.content.Context
@@ -8,16 +8,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.item_view.view.*
+import br.ufrpe.loftapp.Constants
+import br.ufrpe.loftapp.DetailActivity
+import br.ufrpe.loftapp.Item
+import br.ufrpe.loftapp.R
+import kotlinx.android.synthetic.main.card_item_view.view.*
 
-class ItemAdapter(private val items: ArrayList<Item>, private val context: Context, private val typeAdapter:Int) : RecyclerView.Adapter<ViewHolder>(){
+
+class CardItemAdapter(private val items: ArrayList<Item>, private val context: Context, private val typeAdapter:Int) : RecyclerView.Adapter<ViewHolder>(){
 
     override fun getItemCount(): Int {
         return items.size
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, p0, false))
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.card_item_view, p0, false))
     }
 
     override fun onBindViewHolder(p0: ViewHolder, position: Int) {
@@ -33,15 +38,16 @@ class ItemAdapter(private val items: ArrayList<Item>, private val context: Conte
 }
 
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
-    val tvName = view.tvName!!
-    val tvUnits = view.tvUnits!!
-    val tvPrice = view.tvPrice!!
-
-    fun bind( item:Item, context:Context, typeAdapter: Int){
+    val tvName = view.tvCardName!!
+    val ivDelete = view.ivCardDelete!!
+    val tvPrice = view.tvCardPrice!!
+    fun bind(item: Item, context: Context, typeAdapter: Int){
         tvName.text = item.name
         tvPrice.text = item.price.toString()
-        tvUnits.text = item.units.toString()
-        itemView.setOnClickListener {
+        ivDelete.setOnClickListener{
+            Toast.makeText(context, "Item Clicado: ${item.name}", Toast.LENGTH_LONG).show()
+        }
+        /*itemView.setOnClickListener {
             Toast.makeText(context, "Item Clicado: ${item.name}", Toast.LENGTH_LONG).show()
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("item", item)
@@ -49,5 +55,6 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
             val contexto = context as Activity
             contexto.startActivityForResult(intent, Constants.RequestCodeComidas)
         }
+        */
     }
 }

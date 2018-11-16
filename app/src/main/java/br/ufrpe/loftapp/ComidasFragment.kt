@@ -29,7 +29,7 @@ class ComidasFragment: Fragment() {
         var v = inflater.inflate(R.layout.fragment_comidas, container, false)
         v.rvItemList.addItemDecoration(SpaceItemDecoration(30, 50, 30))
         v.rvItemList.layoutManager = GridLayoutManager(context, 2)
-        v.rvItemList.adapter = ItemAdapter(itemList, requireContext())
+        v.rvItemList.adapter = ItemAdapter(itemList, requireContext(), 1)
 
         return v
     }

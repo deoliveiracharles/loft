@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.view.Menu
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_menu.*
 
@@ -31,6 +32,12 @@ class MenuActivity : AppCompatActivity() {
 
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
+
+        buttonTest.setOnClickListener {
+            Toast.makeText(this,"Clicou", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, CardActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -45,7 +52,8 @@ class MenuActivity : AppCompatActivity() {
         if(requestCode == Constants.RequestCodeComidas && resultCode == Activity.RESULT_OK){
             val item = data?.getSerializableExtra("item") as Item
             Constants.card.add(item)
-            Toast.makeText(this, """item adicionado ao card ${Constants.card[Constants.card.size - 1].name}""", Toast.LENGTH_LONG).show()
+            val resString = getString(R.string.addedToCard)
+            Toast.makeText(this,"" +Constants.card[Constants.card.size - 1].name + " " + resString, Toast.LENGTH_LONG).show()
 
         }
     }

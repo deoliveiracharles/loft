@@ -22,8 +22,10 @@
                 android:theme="@style/AppTheme">
         </activity>
         <activity
-            android:name=".DetailActivity"
-            android:theme="@style/AppTheme.detailStyle">
+                android:name=".DetailActivity"
+                android:theme="@style/AppTheme.detailStyle">
+        </activity>
+        <activity android:name=".CardActivity">
         </activity>
     </application>
 
