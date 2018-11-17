@@ -15,10 +15,22 @@ class CardActivity : AppCompatActivity() {
 
         toolbar.setNavigationIcon(R.drawable.menu_white)
         setSupportActionBar(toolbar)
-
+        rvCardList.addItemDecoration(SpaceItemDecoration(0, 40, 0))
         rvCardList.layoutManager = LinearLayoutManager(this)
         rvCardList.adapter = CardItemAdapter(Constants.card, this, 2)
 
+        updatePrice()
+
+    }
+
+    fun updatePrice(){
+        var cardPrice = 0.0
+        for(item in Constants.card){
+            cardPrice += item.price
+        }
+        cardValue.text = cardPrice.toString()
+        totalValue.text = cardPrice.toString()
+        itemCount.text = Constants.card.size.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

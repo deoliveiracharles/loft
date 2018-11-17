@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.Gravity
+import android.view.View
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : Activity() {
@@ -28,7 +29,7 @@ class DetailActivity : Activity() {
         window.attributes = params
 
         val item = intent.getSerializableExtra("item") as Item
-
+        val typeAdapter = intent.getIntExtra("typeAdapter", 1)
         tvNameDetail.text = item.name
         tvPriceDetail.text = item.price.toString()
         tvUnitsDetail.text = item.units.toString()
@@ -44,6 +45,9 @@ class DetailActivity : Activity() {
             intent.putExtra("item", item)
             setResult( Activity.RESULT_OK, intent)
             finish()
+        }
+        if(typeAdapter == 2){
+            btnCard.visibility = View.GONE
         }
     }
 }

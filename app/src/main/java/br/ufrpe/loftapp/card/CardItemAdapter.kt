@@ -27,7 +27,23 @@ class CardItemAdapter(private val items: ArrayList<Item>, private val context: C
 
     override fun onBindViewHolder(p0: ViewHolder, position: Int) {
 
-        p0.bind(items[position], context, typeAdapter)
+        p0?.tvName?.text = items[position].name
+        p0?.tvPrice?.text = items[position].price.toString()
+        p0?.ivDelete?.setOnClickListener{
+            Toast.makeText(context, "${items[position].name} deletado", Toast.LENGTH_LONG).show()
+            items.remove(items[position])
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, items.size)
+
+        }
+        p0?.itemView.setOnClickListener{
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("item", items[position])
+            intent.putExtra("typeAdapter", typeAdapter)
+            val contexto = context as Activity
+            contexto.startActivityForResult(intent, Constants.RequestCodeComidas)
+        }
+        //p0.bind(items[position], context, typeAdapter)
         /*
         p0?.tvName?.text = items[position].name
         p0?.tvPrice?.text = items[position].price.toString()
@@ -41,20 +57,23 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
     val tvName = view.tvCardName!!
     val ivDelete = view.ivCardDelete!!
     val tvPrice = view.tvCardPrice!!
+    /*
     fun bind(item: Item, context: Context, typeAdapter: Int){
         tvName.text = item.name
         tvPrice.text = item.price.toString()
         ivDelete.setOnClickListener{
-            Toast.makeText(context, "Item Clicado: ${item.name}", Toast.LENGTH_LONG).show()
+            Constants.card.remove(item)
+
+            Toast.makeText(context, "${item.name} deletado", Toast.LENGTH_LONG).show()
         }
-        /*itemView.setOnClickListener {
-            Toast.makeText(context, "Item Clicado: ${item.name}", Toast.LENGTH_LONG).show()
+        itemView.setOnClickListener {
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("item", item)
             intent.putExtra("typeAdapter", typeAdapter)
             val contexto = context as Activity
             contexto.startActivityForResult(intent, Constants.RequestCodeComidas)
         }
-        */
+
     }
+    */
 }

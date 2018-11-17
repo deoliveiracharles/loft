@@ -42,7 +42,6 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
         tvPrice.text = item.price.toString()
         tvUnits.text = item.units.toString()
         itemView.setOnClickListener {
-            Toast.makeText(context, "Item Clicado: ${item.name}", Toast.LENGTH_LONG).show()
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("item", item)
             intent.putExtra("typeAdapter", typeAdapter)
