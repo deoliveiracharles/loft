@@ -17,4 +17,7 @@
     <string name="value">Valor:</string>
     <string name="taxService">Taxa de serviço</string>
     <string name="total">Total</string>
+    <string name="wantDelete">Deseja deletar</string>
+    <string name="Yes">Sim</string>
+    <string name="No">Não</string>
 </resources>

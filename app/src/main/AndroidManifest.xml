@@ -27,6 +27,10 @@
         </activity>
         <activity android:name=".CardActivity">
         </activity>
+        <activity
+                android:name=".card.DeleteActivity"
+                android:theme="@style/AppTheme.detailStyle">
+        </activity>
     </application>
 
 </manifest>
