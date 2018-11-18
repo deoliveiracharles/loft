@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="loftDark">#000000</color>
+    <color name="loftLight">#FFFFFF</color>
+    <color name="loftTabUnchosen">#9b9b9b</color>
+    <color name="loftTabChosen">#ffff00</color>
+    <color name="loftDarkBlue">#083c8e</color>
+    <color name="textColor">#000000</color>
+    <color name="pressBtn">#ffff00</color>
+    <color name="loftSoftDark">#303030</color>
+</resources>
