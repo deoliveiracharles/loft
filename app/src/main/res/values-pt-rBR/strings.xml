@@ -26,4 +26,13 @@
     <string name="wantDelete">Deseja deletar</string>
     <string name="Yes">Sim</string>
     <string name="No">Não</string>
+
+    <!-- credentials -->
+    <string name="Email">E-mail</string>
+    <string name="Password">Senha</string>
+    <string name="SignIn">Entrar</string>
+    <string name="forgotPassword">Esqueceu sua senha?</string>
+    <string name="phoneNumber">Telefone</string>
+    <string name="name">Nome</string>
+    <string name="createAccount">Criar conta</string>
 </resources>

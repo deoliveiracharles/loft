@@ -11,4 +11,9 @@
     <color name="textColor">#000000</color>
     <color name="pressBtn">#ffff00</color>
     <color name="loftSoftDark">#303030</color>
+    <!--added -->
+    <color name="colorBackground">#111111</color>
+    <color name="colorHint">#808080</color>
+    <color name="colorFont">#d3d3d3</color>
+    <color name="loftYellow">#fcd506</color>
 </resources>
