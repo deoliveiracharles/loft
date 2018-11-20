@@ -17,6 +17,8 @@ class Login : AppCompatActivity() {
         if(savedInstanceState != null){
             var email = savedInstanceState.getString("emailField")
             var password = savedInstanceState.getString("passwordField")
+            emailField.setText(email)
+            passwordField.setText(password)
         }
     }
 
