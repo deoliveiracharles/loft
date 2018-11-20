@@ -98,8 +98,8 @@
                 android:id="@+id/tvIngredients"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:textSize="17sp"/>
-
+                android:textSize="17sp"
+                android:textColor="@color/loftDark"/>
 
         <android.support.design.button.MaterialButton
                 style="@style/buttonText"

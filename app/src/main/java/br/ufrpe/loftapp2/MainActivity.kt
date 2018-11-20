@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -20,6 +21,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    var currentlyFragment: Fragment? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,9 +40,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        loadMenu(MenuFragment())
+        if(savedInstanceState != null){
+            currentlyFragment = supportFragmentManager.getFragment(savedInstanceState,
+                savedInstanceState.getCharSequence("tag") as String
+            )
+        }else{
+            loadMenu(MenuFragment())
+        }
+
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        if(outState != null){
+            currentlyFragment = getCurrentFragment()
+            outState.putCharSequence("tag", currentlyFragment!!.tag)
+            supportFragmentManager.putFragment(outState, currentlyFragment!!.tag!!, currentlyFragment!!)
+        }
+    }
     /*override fun onResume() {
         super.onResume()
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -94,15 +111,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun loadMenu(fragment:MenuFragment){
         val fragmentManager = supportFragmentManager.beginTransaction()
-        fragmentManager.replace(R.id.frameLayout, fragment)
+        fragmentManager.replace(R.id.frameLayout, fragment, "menuFragment")
         fragmentManager.commit()
 
     }
 
     private fun loadCard(fragment:CardFragment){
         val fragmentManager = supportFragmentManager.beginTransaction()
-        fragmentManager.replace(R.id.frameLayout, fragment)
+        fragmentManager.replace(R.id.frameLayout, fragment, "cardFragment")
         fragmentManager.commit()
+    }
+
+    private fun getCurrentFragment(): Fragment? {
+        var fragmentList:List<Fragment> = supportFragmentManager.fragments
+        if(fragmentList != null){
+            for(fragment:Fragment in fragmentList){
+                if(fragment != null && fragment.isVisible) {
+                    var tag = fragment.tag
+                    return fragment
+                }
+            }
+        }
+        return null
     }
 
 
