@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/rounded_shape_background">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCardName"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/textColor"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:id="@+id/ivCardDelete"
+        android:src="@drawable/ic_delete"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCardPrice"
+        android:textColor="@color/textColor"
+        android:layout_toLeftOf="@+id/ivCardDelete"
+        android:textSize="20sp"
+        android:text="000"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:text="@string/money"
+        android:layout_toLeftOf="@+id/tvCardPrice"/>
+
+
+
+</RelativeLayout>
