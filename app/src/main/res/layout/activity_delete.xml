@@ -37,6 +37,7 @@
 
         <Button
             android:layout_width="wrap_content"
+            style="@style/buttonText"
             android:layout_height="wrap_content"
             android:id="@+id/btnCancelYes"
             android:layout_marginRight="20dp"

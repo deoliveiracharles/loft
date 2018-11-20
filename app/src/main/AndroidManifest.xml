@@ -13,11 +13,6 @@
                 android:name=".MainActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
                 android:name=".menu.DetailActivity"
@@ -26,6 +21,17 @@
         <activity
                 android:name=".card.DeleteActivity"
                 android:theme="@style/AppTheme.delStyle">
+        </activity>
+        <activity android:name=".credentials.Login"
+                  android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".credentials.CreateAccount"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

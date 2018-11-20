@@ -2,6 +2,7 @@ package br.ufrpe.loftapp2.card
 
 import android.app.Activity
 import android.content.Intent
+import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -21,8 +22,13 @@ class DeleteActivity : AppCompatActivity() {
 
         val width = displayMetrics.widthPixels
         val height = displayMetrics.heightPixels
+        val orientation = resources.configuration.orientation
+        if(orientation == Configuration.ORIENTATION_LANDSCAPE){
+            window.setLayout((width*0.4).toInt(),(height*0.4).toInt())
+        }else{
+            window.setLayout((width*0.7).toInt(),(height*0.2).toInt())
+        }
 
-        window.setLayout((width*0.7).toInt(),(height*0.2).toInt())
 
         val params = window.attributes
         params.gravity = Gravity.CENTER
