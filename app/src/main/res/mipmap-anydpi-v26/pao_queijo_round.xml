@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@drawable/pao_queijo_background"/>
-    <foreground android:drawable="@mipmap/pao_queijo_foreground"/>
-</adaptive-icon>
