@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.widget.ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +22,7 @@
 
     <android.support.design.widget.TextInputLayout
             android:id="@+id/insert_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:textColorHint="@color/colorHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,16 +34,17 @@
         <android.support.design.widget.TextInputEditText
                 android:backgroundTint="@color/colorHint"
                 android:textColor="@color/colorFont"
+                android:inputType="textPersonName"
                 android:id="@+id/insert_name_edit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" android:singleLine="true"
                 android:hint="@string/name"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
             android:id="@+id/insert_phone"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:textColorHint="@color/colorHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,16 +56,17 @@
         <android.support.design.widget.TextInputEditText
                 android:backgroundTint="@color/colorHint"
                 android:textColor="@color/colorFont"
+                android:inputType="phone"
                 android:id="@+id/insert_phone_edit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" android:singleLine="true"
                 android:hint="@string/phoneNumber"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
             android:id="@+id/insert_email"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:textColorHint="@color/colorHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,16 +78,17 @@
         <android.support.design.widget.TextInputEditText
                 android:backgroundTint="@color/colorHint"
                 android:textColor="@color/colorFont"
+                android:inputType="textEmailAddress"
                 android:id="@+id/insert_email_edit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" android:singleLine="true"
                 android:hint="@string/Email"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
             android:id="@+id/insert_password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:textColorHint="@color/colorHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,18 +98,20 @@
             android:layout_marginEnd="16dp">
 
         <android.support.design.widget.TextInputEditText
-                android:backgroundTint="@color/colorHint"
+                android:backgroundTint="@color/colorHint" android:ems="7"
                 android:textColor="@color/colorFont"
+                android:inputType="textPassword"
                 android:id="@+id/insert_password_edit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" android:singleLine="true"
                 android:hint="@string/Password"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.button.MaterialButton
+            android:onClick="bttnClick"
             android:id="@+id/create_account_button"
-            style="@style/Widget.MaterialComponents.Button"
+            style="@style/buttonText"
             android:text="@string/createAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"
@@ -110,3 +121,5 @@
 
 
 </android.support.constraint.ConstraintLayout>
+
+</android.widget.ScrollView>
