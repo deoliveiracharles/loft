@@ -34,5 +34,5 @@
     <string name="phoneNumber">Phone Number</string>
     <string name="name">Name</string>
     <string name="createAccount">Create Account</string>
-
+    <string name="noAccount">Don\'t have an account?</string>
 </resources>
