@@ -35,7 +35,5 @@
     <string name="phoneNumber">Telefone</string>
     <string name="name">Nome</string>
     <string name="createAccount">Criar conta</string>
-<<<<<<< Updated upstream
     <string name="noAccount">Não tem uma conta?</string>
-
 </resources>
