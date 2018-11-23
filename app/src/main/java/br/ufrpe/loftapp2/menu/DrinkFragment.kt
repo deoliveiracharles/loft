@@ -23,6 +23,7 @@ class DrinkFragment: Fragment(){
         loadDrinkItem()
     }
 
+<<<<<<< Updated upstream
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var v = LayoutInflater.from(container?.context).inflate(R.layout.drink_layout, container, false)
@@ -33,6 +34,7 @@ class DrinkFragment: Fragment(){
     }
 
     private fun loadDrinkItem(){
+<<<<<<< Updated upstream
         itemList.add(Item("Red Label", 1, 5.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
         itemList.add(Item("Old Par", 1, 12.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))
         itemList.add(Item("Chivas", 1, 8.0, "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"))

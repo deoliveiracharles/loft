@@ -81,6 +81,7 @@
     <TextView
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+<<<<<<< Updated upstream
             android:text="@string/noAccount"
             android:textColor="@color/colorFont"
             android:textAlignment="center"
