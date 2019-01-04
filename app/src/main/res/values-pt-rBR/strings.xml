@@ -36,4 +36,11 @@
     <string name="name">Nome</string>
     <string name="createAccount">Criar conta</string>
     <string name="noAccount">Não tem uma conta?</string>
+
+    <string name="invalidInformation">Informação Inválida</string>
+    <string name="invalidEmail">Email inválido</string>
+    <string name="accountCreatedSuccessfuly">Conta criada com sucesso</string>
+    <string name="infoMissing">Preencha todos os campos</string>
+    <string name="invalidUser">Login ou senha inválidos</string>
+
 </resources>

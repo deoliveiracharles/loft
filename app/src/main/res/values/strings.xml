@@ -35,4 +35,11 @@
     <string name="name">Name</string>
     <string name="createAccount">Create Account</string>
     <string name="noAccount">Don\'t have an account?</string>
+
+    <string name="invalidInformation">Invalid Information</string>
+    <string name="invalidEmail">Invalid email</string>
+    <string name="accountCreatedSuccessfuly">Account Created Successfully</string>
+    <string name="infoMissing">Information is missing</string>
+    <string name="invalidUser">Invalid user or password</string>
+
 </resources>
