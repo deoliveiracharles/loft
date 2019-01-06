@@ -5,15 +5,18 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import br.ufrpe.loftapp2.MainActivity
+import br.ufrpe.loftapp2.credentials.User
 import br.ufrpe.loftapp2.R
 import kotlinx.android.synthetic.main.activity_create_account.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class CreateAccount : AppCompatActivity() {
 
     // [START declare_auth]
-    private lateinit var mAuth: FirebaseAuth;
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var user: User
+    private var firebaseDatabase: FirebaseDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,19 +24,19 @@ class CreateAccount : AppCompatActivity() {
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance()
-        create_account_button.visibility = View.VISIBLE
-        createAccountProgress.visibility = View.INVISIBLE
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        progress(false)
 
         if(savedInstanceState != null){
-            var email = savedInstanceState.getString("email")
-            var password = savedInstanceState.getString("password")
             var name = savedInstanceState.getString("name")
             var phone = savedInstanceState.getString("phone")
+            var email = savedInstanceState.getString("email")
+            var password = savedInstanceState.getString("password")
 
-            insert_email_edit.setText(email)
             insert_name_edit.setText(name)
-            insert_password_edit.setText(password)
             insert_phone_edit.setText(phone)
+            insert_email_edit.setText(email)
+            insert_password_edit.setText(password)
         }
     }
 
@@ -45,16 +48,16 @@ class CreateAccount : AppCompatActivity() {
 
     fun bttnClick(v: View){
 
-        var email: String? = insert_email_edit.text.toString()
         var name: String? = insert_name_edit.text.toString()
         var phone: String? = insert_phone_edit.text.toString()
+        var email: String? = insert_email_edit.text.toString()
         var password: String? = insert_password_edit.text.toString()
 
         var invalidInfo: String = getString(R.string.invalidInformation)
         var invalidEmail: String = getString(R.string.invalidEmail)
 
-        if (email!!.isEmpty() || name!!.isEmpty() || phone!!.isEmpty() || password!!.isEmpty() || !isValidEmail(email)){
-            if (!isValidEmail(email)){
+        if (name!!.isEmpty() || phone!!.isEmpty() || email!!.isEmpty() ||  password!!.isEmpty() || !isValidEmail(email)){
+            if (!isValidEmail(email!!)){
                 showMessage(invalidEmail)
             }
             else{
@@ -68,26 +71,46 @@ class CreateAccount : AppCompatActivity() {
 
     private fun createAccount(name: String, phone: String, email: String, password: String) {
 
-        var accountCreated: String = getString(R.string.accountCreatedSuccessfuly)
-        create_account_button.visibility = View.INVISIBLE
-        createAccountProgress.visibility = View.VISIBLE
+        progress(true)
 
         mAuth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){task ->
                 if (task.isSuccessful) {
-                    showMessage(accountCreated)
+                    storeUserOnDatabase(name, phone, email, password)
+
                     val intent = Intent(this, Login::class.java )
                     startActivity(intent)
                     finish()
 
                 } else {
                     // If sign in fails, display a message to the user.
-                    create_account_button.visibility = View.VISIBLE
-                    createAccountProgress.visibility = View.INVISIBLE
+                    progress(false)
                     showMessage(task.exception!!.message.toString())
                 }
             }
 
+    }
+
+    private fun storeUserOnDatabase(name: String, phone: String, email: String,  password: String){
+        val ref = firebaseDatabase!!.getReference("users")
+        val userId:String = ref.push().key!!
+        val user = User(userId, name, phone, email, password)
+
+        var accountCreated: String = getString(R.string.accountCreatedSuccessfuly)
+
+        ref.child(userId).setValue(user)
+        showMessage(accountCreated)
+    }
+
+    fun progress (progress: Boolean){
+        if (progress){
+            create_account_button.visibility= View.INVISIBLE
+            createAccountProgress.visibility = View.VISIBLE
+        }
+        else{
+            create_account_button.visibility= View.VISIBLE
+            createAccountProgress.visibility = View.INVISIBLE
+        }
     }
 
     private fun isValidEmail(target: CharSequence): Boolean {
