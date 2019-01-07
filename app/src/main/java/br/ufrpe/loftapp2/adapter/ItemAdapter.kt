@@ -8,10 +8,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import br.ufrpe.loftapp2.Constants
 import br.ufrpe.loftapp2.R
 import br.ufrpe.loftapp2.menu.DetailActivity
 import br.ufrpe.loftapp2.model.Item
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_view.view.*
 
 class ItemAdapter(private val items: ArrayList<Item>, private val context: Context, private val typeAdapter:Int) : RecyclerView.Adapter<ViewHolder>(){
@@ -40,11 +42,14 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
     val tvName = view.tvName!!
     val tvUnits = view.tvUnits!!
     val tvPrice = view.tvPrice!!
+    val imageView:ImageView = view.imageViewItem!!
 
     fun bind( item:Item, context:Context, typeAdapter: Int){
         tvName.text = item.name
         tvPrice.text = item.price.toString()
         tvUnits.text = item.units.toString()
+        Picasso.with(context).load(item.imageLink).into(imageView)
+
         itemView.setOnClickListener {
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("item", item)
