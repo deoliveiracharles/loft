@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import br.ufrpe.loftapp2.MainActivity
+import br.ufrpe.loftapp2.QRCodeReader
 import br.ufrpe.loftapp2.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
@@ -69,7 +69,8 @@ class Login : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener { task ->
                 if(task.isSuccessful) {
-                    val intent = Intent(this, MainActivity::class.java)
+                    //val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, QRCodeReader::class.java)
                     startActivity(intent)
                 }else{
                     signInButton.visibility = View.VISIBLE

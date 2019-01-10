@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LoftApp2</string>
+    <string name="app_name">Loft</string>
     <string name="navigation_drawer_open">abrir drawer navigation</string>
     <string name="navigation_drawer_close">fechar drawer navigation</string>
     <string name="nav_header_title">android studio</string>
@@ -42,5 +42,9 @@
     <string name="accountCreatedSuccessfuly">Conta criada com sucesso</string>
     <string name="infoMissing">Preencha todos os campos</string>
     <string name="invalidUser">Login ou senha inválidos</string>
+    <string name="detect">Detectar QR Code da mesa</string>
+    <string name="wait">Por favor espere...</string>
+    <string name="problemQr">Problema para ler QR code, tente novamente</string>
+    <string name="Table">Mesa</string>
 
 </resources>

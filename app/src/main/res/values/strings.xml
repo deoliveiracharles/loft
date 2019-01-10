@@ -41,5 +41,8 @@
     <string name="accountCreatedSuccessfuly">Account Created Successfully</string>
     <string name="infoMissing">Information is missing</string>
     <string name="invalidUser">Invalid user or password</string>
+    <string name="detect">Detect table QR Code</string>
+    <string name="problemQr">Problem to read QR code, please try again</string>
+    <string name="Table">Table</string>
 
 </resources>
