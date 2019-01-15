@@ -31,7 +31,7 @@
                 android:layout_margin="20dp"
                 android:background="@drawable/rounded_shape_background">
 
-            <LinearLayout
+            <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -42,7 +42,8 @@
                         android:id="@+id/itemCount"
                         android:textColor="@color/textColor"
                         android:textSize="20sp"
-                        android:layout_marginLeft="20dp"/>
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="2dp"/>
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -50,13 +51,25 @@
                         android:textColor="@color/textColor"
                         android:text="@string/itens"
                         android:textSize="20sp"
-                        android:layout_marginLeft="10dp"/>
-            </LinearLayout>
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/itemCount"
+                        android:layout_marginTop="2dp"/>
+
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirm"
+                        android:textColor="@color/loftDark"
+                        android:layout_below="@id/itemCount"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/confirmBtn"/>
+            </RelativeLayout>
 
             <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="4dp">
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -91,7 +104,7 @@
             <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="4dp">
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -125,7 +138,7 @@
             <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="2dp">
 
                 <TextView
                         android:id="@+id/totalValue"
@@ -158,16 +171,42 @@
 
             </RelativeLayout>
         </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/rvCardList"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="40dp">
+                android:orientation="vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/loftYellow"
+                    android:text="@string/pending"
+                    android:layout_marginLeft="20dp"/>
+            <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/rvCardList"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp">
 
-        </android.support.v7.widget.RecyclerView>
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/loftYellow"
+                    android:text="@string/confirmed"
+                    android:layout_marginLeft="20dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rvCardList2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="2dp">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
 
 
     </LinearLayout>

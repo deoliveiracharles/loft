@@ -47,5 +47,7 @@
     <string name="itemDel">Item deleted</string>
     <string name="confirmCard">Confirm card?</string>
     <string name="confirm">Confirm card</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="pending">pending</string>
 
 </resources>

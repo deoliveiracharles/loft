@@ -8,13 +8,22 @@ import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_qrcode_reader.*
 import android.R.attr.data
+import br.ufrpe.loftapp2.model.Item
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.zxing.integration.android.IntentResult
 import java.lang.Double.parseDouble
 import java.lang.NumberFormatException
+import java.util.HashMap
 import kotlin.math.roundToInt
 
 
 class QRCodeReader : AppCompatActivity() {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +34,8 @@ class QRCodeReader : AppCompatActivity() {
             scanner.setBeepEnabled(false)
             scanner.initiateScan()
         }
+
+        //this.loadPreExistingCardFirebase()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -58,4 +69,6 @@ class QRCodeReader : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
+
+
 }
