@@ -48,8 +48,11 @@ class DetailActivity : Activity() {
             setResult( Activity.RESULT_OK, intent)
             finish()
         }
+
         if(typeAdapter == 2){
             btnCard.visibility = View.GONE
         }
+
+
     }
 }

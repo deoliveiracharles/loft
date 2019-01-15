@@ -14,15 +14,23 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import br.ufrpe.loftapp2.card.CardFragment
+import br.ufrpe.loftapp2.credentials.Login
 import br.ufrpe.loftapp2.menu.MenuFragment
 import br.ufrpe.loftapp2.model.Item
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.nav_header_main.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     var currentlyFragment: Fragment? = null
+
+    val user = FirebaseAuth.getInstance().currentUser
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
@@ -75,6 +83,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
+        user_name.text = user?.displayName
+        user_email.text = user?.email
         return true
     }
 
@@ -97,11 +107,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_card -> {
                 loadCard(CardFragment())
             }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
+            R.id.nav_exit -> {
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, Login::class.java )
+                startActivity(intent)
+                finish()
             }
         }
 

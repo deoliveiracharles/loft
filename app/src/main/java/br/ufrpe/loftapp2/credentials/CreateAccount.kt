@@ -1,6 +1,7 @@
 package br.ufrpe.loftapp2.credentials
 
 import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import br.ufrpe.loftapp2.credentials.User
 import br.ufrpe.loftapp2.R
 import kotlinx.android.synthetic.main.activity_create_account.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.FirebaseDatabase
 
 class CreateAccount : AppCompatActivity() {
@@ -75,8 +77,15 @@ class CreateAccount : AppCompatActivity() {
 
         mAuth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){task ->
+
                 if (task.isSuccessful) {
                     storeUserOnDatabase(name, phone, email, password)
+
+                    val user = FirebaseAuth.getInstance().currentUser
+                    val profileUpdates = UserProfileChangeRequest.Builder()
+                        .setDisplayName(name)
+                        .build()
+                    user?.updateProfile(profileUpdates)
 
                     val intent = Intent(this, Login::class.java )
                     startActivity(intent)
