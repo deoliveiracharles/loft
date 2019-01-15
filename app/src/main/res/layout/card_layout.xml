@@ -7,17 +7,17 @@
     android:background="@color/loftSoftDark">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp"
-        android:paddingTop="15dp"
-        android:background="@color/loftDark"
-        android:textColor="@color/loftLight"
-        android:textSize="25sp"
-        android:textAlignment="center"
-        android:text="@string/card"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:background="@color/loftDark"
+            android:textColor="@color/loftLight"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:text="@string/card"/>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:layout_margin="20dp"
             android:background="@drawable/rounded_shape_background">
 
-        <LinearLayout
+        <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -45,8 +45,18 @@
                     android:textColor="@color/textColor"
                     android:text="@string/itens"
                     android:textSize="20sp"
-                    android:layout_marginLeft="10dp"/>
-        </LinearLayout>
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/itemCount"/>
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirm"
+                    android:textColor="@color/loftDark"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/confirmBtn"/>
+        </RelativeLayout>
 
         <RelativeLayout
                 android:layout_width="wrap_content"

@@ -7,5 +7,6 @@ class Constants {
         val RequestCodeComidas=1010
         var card  = ArrayList<Item>()
         val RequestCodeDelete=1011
+        val RequestCodeConfirm=1012
     }
 }

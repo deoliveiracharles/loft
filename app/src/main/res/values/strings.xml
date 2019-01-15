@@ -44,5 +44,8 @@
     <string name="detect">Detect table QR Code</string>
     <string name="problemQr">Problem to read QR code, please try again</string>
     <string name="Table">Table</string>
+    <string name="itemDel">Item deleted</string>
+    <string name="confirmCard">Confirm card?</string>
+    <string name="confirm">Confirm card</string>
 
 </resources>

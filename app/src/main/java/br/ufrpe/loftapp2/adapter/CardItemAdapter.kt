@@ -8,12 +8,14 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import br.ufrpe.loftapp2.Constants
 import br.ufrpe.loftapp2.R
 import br.ufrpe.loftapp2.card.DeleteActivity
 import br.ufrpe.loftapp2.menu.DetailActivity
 import br.ufrpe.loftapp2.model.Item
 import kotlinx.android.synthetic.main.card_item_view.view.*
+import kotlinx.android.synthetic.main.item_view.view.*
 
 
 class CardItemAdapter(private val items: ArrayList<Item>, private val context: Context, private val typeAdapter:Int, private val fragment:Fragment) : RecyclerView.Adapter<ViewHolderCard>(){
@@ -41,6 +43,11 @@ class CardItemAdapter(private val items: ArrayList<Item>, private val context: C
             //notifyItemRemoved(position)
             //notifyItemRangeChanged(position, items.size)
 
+        }
+        if (items[position].isConfirmed){
+            p0.ivDelete.visibility = View.INVISIBLE
+        }else{
+            p0.ivDelete.visibility = View.VISIBLE
         }
         p0.itemView.setOnClickListener{
             val intent = Intent(context, DetailActivity::class.java)

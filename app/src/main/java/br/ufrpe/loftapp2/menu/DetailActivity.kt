@@ -8,6 +8,7 @@ import android.view.Gravity
 import android.view.View
 import br.ufrpe.loftapp2.R
 import br.ufrpe.loftapp2.model.Item
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : Activity() {
@@ -36,6 +37,7 @@ class DetailActivity : Activity() {
         tvPriceDetail.text = item.price.toString()
         tvUnitsDetail.text = item.units.toString()
         tvIngredients.text = item.ingredients
+        Picasso.with(applicationContext).load(item.imageLink).into(ivItem)
 
         tvCancelbtn.setOnClickListener {
             val intent = Intent()

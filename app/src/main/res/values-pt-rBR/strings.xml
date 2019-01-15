@@ -46,5 +46,8 @@
     <string name="wait">Por favor espere...</string>
     <string name="problemQr">Problema para ler QR code, tente novamente</string>
     <string name="Table">Mesa</string>
+    <string name="itemDel">Item deletado</string>
+    <string name="confirmCard">Confirmar comanda?</string>
+    <string name="confirm">Confirmar comanda</string>
 
 </resources>

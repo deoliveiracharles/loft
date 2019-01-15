@@ -3,6 +3,7 @@ package br.ufrpe.loftapp2.card
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Rect
+import android.media.Image
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import br.ufrpe.loftapp2.Constants
 import br.ufrpe.loftapp2.R
@@ -26,6 +28,10 @@ class CardFragment: Fragment(){
         v.rvCardList.addItemDecoration(SpaceItemDecoration(0, 40, 0))
         v.rvCardList.layoutManager = LinearLayoutManager(context)
         v.rvCardList.adapter = CardItemAdapter(Constants.card, requireContext(), 2, this)
+        v.confirmBtn.setOnClickListener {
+            val intent = Intent(context, ConfirmCardActivity::class.java)
+            this.startActivityForResult(intent, Constants.RequestCodeConfirm)
+        }
         updatePrice(v)
         return v
     }
@@ -58,8 +64,17 @@ class CardFragment: Fragment(){
             Constants.card.removeAt(position)
             rvCardList.adapter!!.notifyItemRemoved(position)
             rvCardList.adapter!!.notifyItemRangeChanged(position, Constants.card.size)
-            Toast.makeText(context,"Item Deletado" , Toast.LENGTH_LONG).show()
+            Toast.makeText(context, getString(R.string.itemDel) , Toast.LENGTH_LONG).show()
             updatePrice()
+        }
+
+        if(requestCode == Constants.RequestCodeConfirm && resultCode == Activity.RESULT_OK){
+            for (i in Constants.card.indices){
+                var view = rvCardList.layoutManager!!.findViewByPosition(i)
+                Constants.card[i].isConfirmed = true
+                var  button = view!!.findViewById<ImageView>(R.id.ivCardDelete)
+                button.visibility = View.INVISIBLE
+            }
         }
 
     }
