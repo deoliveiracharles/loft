@@ -9,5 +9,6 @@ class Constants {
         val confirmedCard = ArrayList<Item>()
         val RequestCodeDelete=1011
         val RequestCodeConfirm=1012
+        var controlador = 0
     }
 }

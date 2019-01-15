@@ -23,12 +23,15 @@ import kotlin.math.roundToInt
 
 class QRCodeReader : AppCompatActivity() {
 
-
+    var firebaseDatabase: FirebaseDatabase? = null
+    val user = FirebaseAuth.getInstance().currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qrcode_reader)
 
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        loadPreExistingCardFirebase() // ----------------------
         btnDetect.setOnClickListener {
             val scanner = IntentIntegrator(this)
             scanner.setBeepEnabled(false)
@@ -36,6 +39,36 @@ class QRCodeReader : AppCompatActivity() {
         }
 
         //this.loadPreExistingCardFirebase()
+    }
+
+    private fun loadPreExistingCardFirebase(){
+        val cardRef = firebaseDatabase!!.getReference("cards")
+        cardRef.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                if(Constants.controlador == 0){
+                    Constants.confirmedCard.clear()
+                    for(snapshot in p0.children){
+                        val hashMap = snapshot.value as HashMap<String, String>
+                        if(hashMap.size > 0 && Constants.controlador == 0){
+                            if(hashMap["userEmail"].toString() == user!!.email){
+                                var hashItem = hashMap["item"] as HashMap<String, String>
+                                var item = Item(hashItem["id"].toString(), hashItem["name"].toString(), hashItem["units"].toString().toInt(), hashItem["price"].toString().toDouble(), hashItem["igredients"].toString(), hashItem["imageLink"].toString())
+                                item.isConfirmed = true
+                                Constants.confirmedCard.add(item)
+                            }
+                        }
+                    }
+                    Constants.controlador = 1
+                }
+
+
+
+
+            }
+            override fun onCancelled(p0: DatabaseError) {
+                Toast.makeText(applicationContext, "Problem reading from server", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -55,6 +88,7 @@ class QRCodeReader : AppCompatActivity() {
 
                     if(isNumber){
                         Toast.makeText(this, getString(R.string.Table) + ": "+  result.contents, Toast.LENGTH_LONG).show()
+
                         val intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("tableNumber", tableNumber)
                         startActivity(intent)
